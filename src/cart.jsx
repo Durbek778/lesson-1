@@ -26,9 +26,15 @@ class Cart extends React.Component {
 		if(this.state.amount<10){
 			this.setState({amount:++this.state.amount})
 			this.setState({price:this.state.price+7500})
-		}
+		}else {}
 	
 	} 
+	const minus = () => {
+         if (this.state.amount > 1) {
+			this.setState({amount: this.state.amount - 1})
+			this.setState({price: this.state.price - 7500})
+		 }
+	}
 	
     
 
@@ -73,7 +79,7 @@ class Cart extends React.Component {
 							+
 						</button>
 						<p>{this.state.amount}</p>
-						<button className="button-2">
+						<button className="button-2" onClick={minus}>
 							-
 						</button>
 					</div>
